@@ -1,0 +1,19 @@
+<aside class="h-full flex flex-col p-4 relative">
+  <button
+    (click)="isOpen.update((b) => !b)"
+    aria-label="Toggle sidebar"
+    class="cursor-pointer absolute flex top-0 right-0 hover:drop-shadow-[0_0_6px_#38f58f]"
+  >
+    <i
+      class="pixelart-icons-font-chevron-left text-[#38f58f] text-2xl block transition-transform duration-200"
+      [class.-rotate-180]="!isOpen()"
+      aria-hidden="true"
+    ></i>
+  </button>
+  <p>wtf</p>
+  <p>wtf</p>
+  <p>wtf</p>
+  <p>wtf</p>
+  <p>wtf</p>
+  <p>wtf</p>
+</aside>

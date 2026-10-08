@@ -1,0 +1,10 @@
+<div (click)="openDialog()">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Select ...."
+    [value]="valueName"
+    (blur)="onTouched()"
+    readonly
+  />
+</div>

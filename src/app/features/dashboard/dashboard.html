@@ -1,0 +1,68 @@
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<div class="flex gap-4">
+  <table cdk-table fixedLayout>
+    <caption>
+      Status of the club members 2021
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Name</th>
+        <th scope="col" rowspan="2">ID</th>
+        <th scope="col" colspan="2">Membership Dates</th>
+        <th scope="col" rowspan="2">Balance</th>
+      </tr>
+      <tr>
+        <th scope="col">Joined</th>
+        <th scope="col">Canceled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Margaret Nguyen</th>
+        <td>427311</td>
+        <td><time datetime="2010-06-03">June 3, 2010</time></td>
+        <td>n/a</td>
+        <td>0.00</td>
+      </tr>
+      <tr>
+        <th scope="row">Edvard Galinski</th>
+        <td>533175</td>
+        <td><time datetime="2011-01-13">January 13, 2011</time></td>
+        <td><time datetime="2017-04-08">April 8, 2017</time></td>
+        <td>37.00</td>
+      </tr>
+      <tr>
+        <th scope="row">Hoshi Nakamura</th>
+        <td>601942</td>
+        <td><time datetime="2012-07-23">July 23, 2012</time></td>
+        <td>n/a</td>
+        <td>15.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="4">Total balance</th>
+        <td>52.00</td>
+      </tr>
+    </tfoot>
+  </table>
+  <label for="pet-select">Choose a pet:</label>
+
+  <form class="p-3 m-0">
+    <div class="mb-3">
+      <label class="form-label">Select Employee</label>
+      <app-select-custom class="mb-2" [items]="itemList()" [formControl]="employee" />
+      @if (employee.invalid && employee.touched) {
+        @if (employee.hasError('minSelected')) {
+          <div class="text-danger d-block mt-1">Minimum Selected 3 Employee</div>
+        }
+      }
+    </div>
+
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-primary" (click)="onCheck()">Select</button>
+    </div>
+  </form>
+</div>
