@@ -111,3 +111,65 @@ tbody > tr:nth-child(even) {
   box-shadow: 0 0 16px rgba(0, 255, 102, 0.35);
   max-height: 80vh;
 }
+select {
+  appearance: none;
+  font: inherit;
+  color: #00cc55;
+  background-color: #010d03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%2300ff66'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px 6px;
+  border: 1px solid #00ff66;
+  border-radius: 0;
+  padding: 4px 28px 4px 8px;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: #002b0e;
+  color: #00ff66;
+}
+
+select:focus-visible {
+  outline: 1px solid #00ff66;
+}
+
+option {
+  background: #010d03;
+  color: #00cc55;
+}
+@supports (appearance: base-select) {
+  select,
+  select::picker(select) {
+    appearance: base-select;
+  }
+
+  select::picker(select) {
+    background: #010d03;
+    border: 1px solid #00ff66;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  select::picker-icon,
+  option::checkmark {
+    display: none;
+  }
+
+  option {
+    padding: 4px 8px;
+    border-bottom: 1px solid #00ff66;
+  }
+
+  option:hover,
+  option:focus-visible {
+    background: #002b0e;
+    color: #00ff66;
+  }
+
+  option:checked {
+    background: #003f19;
+    color: #00ff22;
+  }
+}

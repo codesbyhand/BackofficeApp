@@ -28,6 +28,14 @@
   align-content: center;
   background: #05330a;
 }
+.card-footer {
+  height: 32px;
+  display: flex;
+  border-bottom: 1px solid #00ff66;
+  justify-content: end;
+  background: #05330a;
+  padding-right: 12px;
+}
 .card-container {
   border-bottom: 1px solid #00ff66;
   & > input {
@@ -42,9 +50,21 @@
   margin: auto;
 }
 .list-group-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   background: transparent;
   color: #00cc55;
-  border-color: #004d1a;
+  padding: 4px;
+  border-bottom: 1px solid #00ff66;
+  border-top: 1px solid #00ff66;
+  & > input {
+    height: 13px;
+  }
+  & * {
+    cursor: pointer;
+  }
 }
 
 .list-group-item:hover {
@@ -53,10 +73,16 @@
 }
 
 .list-group-item.selected {
-  background: #00ff66;
-  color: #020a02;
+  background: #003f19;
+  color: #00ff22;
 }
 
 .form-check-input {
   accent-color: #00ff66;
+}
+.stretched-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
 }
