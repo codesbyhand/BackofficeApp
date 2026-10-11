@@ -2,7 +2,7 @@
 <p>2</p>
 <p>3</p>
 <div class="flex gap-4">
-  <table cdk-table fixedLayout>
+  <table>
     <caption>
       Status of the club members 2021
     </caption>
@@ -78,4 +78,7 @@
     <option value="spider">Spider</option>
     <option value="goldfish">Goldfish</option>
   </select>
+</div>
+<div>
+  <app-table-custom [data]="dataSource" [columns]="columns" />
 </div>

@@ -1,0 +1,11 @@
+<table cdk-table [dataSource]="data()">
+  @for (column of columns(); track column.key) {
+    <ng-container [cdkColumnDef]="column.key">
+      <th cdk-header-cell *cdkHeaderCellDef>{{ column.name }}</th>
+      <td cdk-cell *cdkCellDef="let row">{{ row[column.key] }}</td>
+    </ng-container>
+  }
+
+  <tr cdk-header-row *cdkHeaderRowDef="columnKeys()"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columnKeys()"></tr>
+</table>
