@@ -40,10 +40,6 @@
   border-bottom: 1px solid #00ff66;
   & > input {
     width: 100%;
-    padding: 4px;
-    &:focus-visible {
-      outline: 1px solid #00ff66;
-    }
   }
 }
 .card-title {

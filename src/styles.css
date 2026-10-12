@@ -7,6 +7,17 @@
   font-display: swap;
 }
 
+:root {
+  /* CRT scanlines: transparent 2px, dark 2px, repeating */
+  --scanlines: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.28) 2px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+}
+
 body {
   height: 100%;
   font-family: 'IBM EGA 8x14', monospace;
@@ -26,22 +37,16 @@ body::after {
   z-index: 9999;
   pointer-events: none;
   mix-blend-mode: multiply;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0px,
-    rgba(0, 0, 0, 0) 2px,
-    rgba(0, 0, 0, 0.28) 2px,
-    rgba(0, 0, 0, 0.28) 4px
-  );
+  background: var(--scanlines);
 }
 input {
   background: #002304;
   border: 1px solid;
+  padding: 4px;
+  &:focus-visible {
+    outline: 1px solid #00ff66;
+  }
 }
-input:focus {
-  border-color: #05330a;
-}
-
 button:not(:disabled) {
   cursor: pointer;
 }
@@ -139,6 +144,9 @@ option {
   background: #010d03;
   color: #00cc55;
 }
+
+/* The picker renders in the top layer, above body::after,
+   so it paints its own scanlines over each background color */
 @supports (appearance: base-select) {
   select,
   select::picker(select) {
@@ -160,16 +168,17 @@ option {
   option {
     padding: 4px 8px;
     border-bottom: 1px solid #00ff66;
+    background: var(--scanlines), #010d03;
   }
 
   option:hover,
   option:focus-visible {
-    background: #002b0e;
     color: #00ff66;
+    background: var(--scanlines), #002b0e;
   }
 
   option:checked {
-    background: #003f19;
     color: #00ff22;
+    background: var(--scanlines), #003f19;
   }
 }

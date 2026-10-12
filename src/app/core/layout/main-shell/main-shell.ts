@@ -4,8 +4,8 @@ import { Header } from '@core/layout/header/header';
 import { Sidebar } from '@core/layout/sidebar/sidebar';
 @Component({
   imports: [RouterOutlet, Header, Sidebar],
-  selector: 'app-shell',
-  styleUrl: './shell.css',
-  templateUrl: './shell.html',
+  selector: 'app-main-shell',
+  styleUrl: './main-shell.css',
+  templateUrl: './main-shell.html',
 })
-export class Shell {}
+export class MainShell {}
