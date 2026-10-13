@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { Login } from '@features/login/login';
 
 @Component({
-  imports: [],
+  imports: [Login],
   selector: 'app-auth-shell',
   styleUrl: './auth-shell.css',
-  templateUrl: './auth-shell.html',
+  template: `<app-login />`,
 })
 export class AuthShell {}

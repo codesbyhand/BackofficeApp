@@ -19,15 +19,14 @@
 }
 
 body {
-  height: 100%;
   font-family: 'IBM EGA 8x14', monospace;
   -webkit-font-smoothing: none;
   font-smooth: never;
-}
-main {
   background-color: #010d03;
   color: #18e699;
   scrollbar-color: #38f58f #031706;
+}
+main {
 }
 /* CRT scanline overlay above every element; fixed so it doesn't scroll with content */
 body::after {
