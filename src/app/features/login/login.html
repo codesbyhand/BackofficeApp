@@ -1,14 +1,18 @@
 <main class="h-dvh flex">
-  <section class="m-auto flex flex-col h-[400px] w-[600px] terminal-background-dark border">
-    <span class="text-center text-3xl">DevOps</span>
-    <div class="m-auto flex flex-col h-[30%] justify-around">
+  <section
+    class="m-auto flex flex-col relative h-[400px] w-[600px] terminal-background-dark border"
+  >
+    <span class="text-center text-3xl absolute inset-0 mt-6 h-[50px]">DevOps</span>
+    <div class="m-auto flex flex-col h-[30%] justify-around gap-1">
       <label for="username">Username</label>
-      <input id="username" type="text" />
+      <input class="p-4" id="username" type="text" />
       <label for="password">Password</label>
       <input id="password" type="password" />
-    </div>
-    <div>
-      <button type="button">Login</button>
+      <div class="text-center mt-6">
+        <button appRipple routerLink="app" class="striped-button p-1" type="button">
+          <span class="text-[18px]">[</span> LOGIN <span class="text-[18px]">]</span>
+        </button>
+      </div>
     </div>
   </section>
 </main>

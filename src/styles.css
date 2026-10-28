@@ -62,6 +62,7 @@ button:active i {
   @apply text-[#18e699];
 }
 .striped-button {
+  color: black;
   background: repeating-linear-gradient(to bottom, #18b57b 30%, #18b57b 50%, #38f58f 80%, #38f58f);
   background-size: 100% 4px;
 }
@@ -180,4 +181,11 @@ option {
     color: #00ff22;
     background: var(--scanlines), #003f19;
   }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #002304 inset !important;
+  -webkit-text-fill-color: #18e699;
 }
