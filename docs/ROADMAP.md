@@ -10,6 +10,7 @@ The product is an **infrastructure / ops console**: services, deployments, live 
 ## How this document works
 
 - Work is broken down as **Phase → Epic → Ticket**. Each ticket becomes a GitHub issue. Each epic becomes a parent issue or milestone.
+- **This file is the plan, not the status.** Don't tick boxes here. Progress lives in the GitHub issues: copy a ticket's tasks into its issue as a checklist and tick them there. This file only changes at retros, when we re-plan.
 - **Rolling-wave planning:** only the next few phases are broken into detailed tickets. Later phases are listed as epics with learning goals and get detailed when we reach them. Real teams plan this way because what you learn in Phase 2 changes how Phase 5 should be designed. Detailed tickets written months ahead are mostly fiction.
 - **Ticket sizes** are counted in **sessions** (1 session = 1 hour). If a ticket blows past its estimate by more than 2×, stop and raise it at standup. That's a signal, not a failure.
 - Each ticket has these parts:
@@ -121,6 +122,8 @@ At 1h/day this is well over a year of work. That's by design.
 
 ## E0.1 — Repo hygiene & workflow
 
+> **Order:** T0.1's first two tasks (the WIP commit and the `playground` branch) are already done. Do **T0.2 next**, then finish T0.1. That way T0.1's cleanup PR is the first one to use your PR template and the full review flow.
+
 ### T0.1 — Archive the experiments, clean `master`
 **Why:** the master rule. Right now `master` contains copied code you can't explain: the Bootstrap classes, `ExampleDataSource`, and the CDK select.
 
@@ -162,7 +165,7 @@ At 1h/day this is well over a year of work. That's by design.
 - [ ] Learn enough `gh` to work from the terminal: list and view issues, create a PR, check a PR's CI status.
 
 **AC**
-- Opening a PR auto-fills your template. Test this with this ticket's own PR.
+- After this ticket merges, opening the **next** PR auto-fills your template. Find out why this ticket's own PR *can't* be the one that tests it. (Hint: look up where GitHub reads templates from.)
 - The board shows Phase 0.
 
 **Checkpoint**
